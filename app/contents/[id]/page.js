@@ -1,7 +1,14 @@
 
 import {getItem} from "@/lib/api-calls";
 import Player from "@/components/Player";
-import {Suspense} from "react";
+
+
+export async function generateStaticParams({params: {id}}){
+  const data = await getItem()
+  return data?.data?.contents && data?.data?.contents.map((item)=> {
+    id = item.id
+  })
+}
 
 const ContentDetails = async ({params: {id}}) => {
   const data = await getItem()

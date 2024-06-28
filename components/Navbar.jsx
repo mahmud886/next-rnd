@@ -1,7 +1,9 @@
-import React from 'react';
+'use client'
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 
 const Navbar = () => {
+  const pathname = usePathname()
   return (
     <div>
       <div className="flex flex-wrap place-items-center">
@@ -13,10 +15,10 @@ const Navbar = () => {
               </Link>
 
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-                <li><Link href='/' className="hover:text-gray-200">Home</Link></li>
-                <li><Link href={`/contents`} className="hover:text-gray-200">Contents</Link></li>
-                <li><Link href='/' className="hover:text-gray-200">Collections</Link></li>
-                <li><Link href='/' className="hover:text-gray-200">Contact Us</Link></li>
+                <li><Link href='/' className={`${pathname === '/' ? 'text-red-500': ''}`}>Home</Link></li>
+                <li><Link href={`/contents`} className={`${pathname === '/contents' ? 'text-red-500': ''}`}>Contents</Link></li>
+                <li><Link href='/' className={`${pathname === '/collections' ? 'text-red-500': ''}`}>Collections</Link></li>
+                <li><Link href='/' className={`${pathname === '/contact' ? 'text-red-500': ''}`}>Contact Us</Link></li>
               </ul>
 
               <div className="hidden xl:flex items-center space-x-5 items-center">
