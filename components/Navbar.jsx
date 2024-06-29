@@ -17,7 +17,7 @@ const Navbar = () => {
               <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
                 <li><Link href='/' className={`${pathname === '/' ? 'text-red-500': ''}`}>Home</Link></li>
                 <li><Link href={`/contents`} className={`${pathname === '/contents' ? 'text-red-500': ''}`}>Contents</Link></li>
-                <li><Link href='/' className={`${pathname === '/collections' ? 'text-red-500': ''}`}>Collections</Link></li>
+                <li><Link href='/jokes' className={`${pathname === '/jokes' ? 'text-red-500': ''}`}>Jokes</Link></li>
                 <li><Link href='/' className={`${pathname === '/contact' ? 'text-red-500': ''}`}>Contact Us</Link></li>
               </ul>
 
@@ -74,16 +74,6 @@ const Navbar = () => {
           </nav>
 
         </section>
-      </div>
-
-      <div className="absolute bottom-0 right-0 mb-4 mr-4 z-10">
-        <div>
-          <a title="Follow me on twitter" href="https://www.twitter.com/asad_codes" target="_blank"
-             className="block w-16 h-16 rounded-full transition-all shadow hover:shadow-lg transform hover:scale-110 hover:rotate-12">
-            <img className="object-cover object-center w-full h-full rounded-full"
-                 src="https://www.imore.com/sites/imore.com/files/styles/large/public/field/image/2019/12/twitter-logo.jpg"/>
-          </a>
-        </div>
       </div>
     </div>
   );

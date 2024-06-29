@@ -1,6 +1,7 @@
 
 import {getItem} from "@/lib/api-calls";
 import Player from "@/components/Player";
+import {notFound} from "next/navigation";
 
 
 export async function generateStaticParams({params: {id}}){
@@ -13,6 +14,10 @@ export async function generateStaticParams({params: {id}}){
 const ContentDetails = async ({params: {id}}) => {
   const data = await getItem()
   const item = data?.data?.contents && data?.data?.contents.find(item => item.id === parseInt(id));
+
+  if(!item){
+    notFound()
+  }
   if (!item) return <p>No profile data</p>;
   return (
     <div className='container flex flex-col items-center'>
