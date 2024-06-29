@@ -3,6 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import {getData} from "@/lib/api";
 import {dataDecript} from "@/lib/decryptService";
+import Header from "@/components/header";
+import React from "react";
 // export const dynamic = 'force-dynamic'
 // export const revalidate = 500
 
@@ -24,7 +26,6 @@ export default async function RootLayout({ children }) {
       <body className={inter.className} suppressHydrationWarning={true}>
       <Navbar/>
       {children}
-
       </body>
     </html>
   );
